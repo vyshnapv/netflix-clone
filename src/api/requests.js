@@ -6,5 +6,8 @@ const requests = {
   fetchTopRated: `/movie/top_rated?api_key=${API_KEY}`,
   fetchActionMovies: `/discover/movie?api_key=${API_KEY}&with_genres=28`,
 };
+export const fetchMovieVideos = (movieId) =>
+  `/movie/${movieId}/videos?api_key=${API_KEY}`;
+
 
 export default requests;

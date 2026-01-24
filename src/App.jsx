@@ -4,6 +4,8 @@ import { useAuth } from "./context/AuthContext";
 import Login from "./pages/Login";
 import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./pages/Home";
+import MovieDetail from "./pages/MovieDetail";
+import Watch from "./pages/Watch";
 
 const App=()=>{
     const {user}=useAuth()
@@ -18,9 +20,13 @@ const App=()=>{
                           <Home/>
                      </ProtectedRoute>}
                  />
-                {/* <Route path="/movie/:id" element={<h1>Movie Details</h1>}/>
-                <Route path="/watch/:id" element={<h1>Watch page</h1>}/>
-                <Route path="/watchlist" element={<h1>WatchList page</h1>}/> */}
+                <Route path="/movie" element={<MovieDetail/>}/>
+                <Route path="/watch" element={
+                    <ProtectedRoute>
+                        <Watch />
+                    </ProtectedRoute>
+                }/>
+                
             </Routes>
         </div>
     )

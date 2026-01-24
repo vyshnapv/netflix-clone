@@ -1,0 +1,13 @@
+.watchPage {
+  padding: 40px;
+  background-color: #111;
+  color: white;
+  min-height: 100vh;
+}
+
+.videoContainer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+

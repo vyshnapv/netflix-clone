@@ -1,8 +1,10 @@
 import { useEffect,useState } from "react";
 import axios from "../api/axios";
+import { useNavigate } from "react-router-dom";
 
 const Row=({title,fetchUrl})=>{
     const [movies,setMovies]=useState([])
+    const navigate=useNavigate()
 
     useEffect(()=>{
         async function fetchData(){
@@ -20,9 +22,12 @@ const Row=({title,fetchUrl})=>{
               {movies.map((movie)=>(
                 <img 
                    key={movie.id}
+                   className="row_poster"
                    src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
                    alt={movie.name || movie.title}
-                   style={{ marginRight: "10px", width: "150px" }}
+                   onClick={() =>
+                        navigate("/movie", { state: { movie } })
+                  }
                 />
               ))}
            </div>
