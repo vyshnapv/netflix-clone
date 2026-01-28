@@ -40,7 +40,12 @@ const MovieDetail=()=>{
                <h1>{movie.title || movie.name}</h1>
                <p>{movie.overview}</p>
 
-               <button className="watchlistBtn" onClick={addToWatchlist}>❤️ Add to Watchlist</button>
+               <button className="watchlistBtn"
+                 style={{ margin: "20px", padding: "10px 20px", backgroundColor: "#e50914", color: "white", border: "none", borderRadius: "4px" }}
+                 onClick={() => navigate("/watchlist")}
+               >
+                ❤️ My Watchlist
+               </button>
                <button
                className="watchlistBtn"
                style={{ marginLeft: "10px", backgroundColor: "#0066ff" }}

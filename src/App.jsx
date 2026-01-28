@@ -6,6 +6,7 @@ import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./pages/Home";
 import MovieDetail from "./pages/MovieDetail";
 import Watch from "./pages/Watch";
+import Watchlist from "./pages/Watchlist";
 
 const App=()=>{
     const {user}=useAuth()
@@ -13,6 +14,7 @@ const App=()=>{
         <div>
             <Routes>
                 <Route path="/" element={<Login/>}/>
+
                 <Route 
                    path="/home" 
                    element={
@@ -20,10 +22,18 @@ const App=()=>{
                           <Home/>
                      </ProtectedRoute>}
                  />
+
                 <Route path="/movie" element={<MovieDetail/>}/>
+
                 <Route path="/watch" element={
                     <ProtectedRoute>
                         <Watch />
+                    </ProtectedRoute>
+                }/>
+
+                <Route path="/watchlist" element={
+                    <ProtectedRoute>
+                        <Watchlist />
                     </ProtectedRoute>
                 }/>
                 
