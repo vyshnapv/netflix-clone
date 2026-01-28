@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "../api/axios";
 import { fetchMovieVideos } from "../api/requests";
 import "./Watch.css";
+import Header from "../components/Header";
 
 const Watch = () => {
   const { state } = useLocation();
@@ -34,6 +35,8 @@ const Watch = () => {
   if (!movie) return <h2>Movie not found</h2>;
 
   return (
+   <>
+    <Header />
     <div className="watchPage">
       <h1>Watching: {movie.title || movie.name}</h1>
 
@@ -53,6 +56,7 @@ const Watch = () => {
         <p>Trailer not available</p>
       )}
     </div>
+   </>
   );
 };
 

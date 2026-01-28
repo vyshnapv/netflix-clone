@@ -3,6 +3,7 @@ import { useAuth } from "../context/AuthContext";
 import { db } from "../firebase/firebase";
 import { collection,getDocs } from "firebase/firestore";
 import { useNavigate } from "react-router-dom";
+import Header from "../components/Header";
 import "./Watchlist.css"
 
 const Watchlist=()=>{
@@ -33,6 +34,8 @@ const Watchlist=()=>{
         return <h2 className="watchlist__error">Please login to view your watchlist</h2>
     }
     return(
+      <> 
+       <Header />
         <div className="watchlist"> 
            <h1 className="watchlist__title">Your Watchlist</h1>
 
@@ -56,6 +59,7 @@ const Watchlist=()=>{
             </div>
            )}
         </div>
+      </> 
     )
 }
 

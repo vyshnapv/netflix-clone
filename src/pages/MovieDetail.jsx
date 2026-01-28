@@ -3,6 +3,7 @@ import "./MovieDetail.css"
 import { db } from "../firebase/firebase";
 import { doc,setDoc } from "firebase/firestore";
 import { useAuth } from "../context/AuthContext";
+import Header from "../components/Header";
 
 const base_url="https://image.tmdb.org/t/p/original/";
 
@@ -29,6 +30,8 @@ const MovieDetail=()=>{
         return <h2>Movie Not Found</h2>
     }
     return(
+      <>
+       <Header />
         <div className="movieDetail">
            <img 
               src={`${base_url}${movie.backdrop_path}`}
@@ -55,6 +58,7 @@ const MovieDetail=()=>{
             </button>
            </div>
         </div>
+      </>
     )
 }
 
