@@ -1,10 +1,16 @@
 import { useNavigate } from "react-router-dom";
 import {useAuth} from "../context/AuthContext";
+import { useState } from "react";
 import "./Header.css";
 
 const Header=()=>{
     const navigate=useNavigate();
-    const {logout}=useAuth();
+    const {logout,user}=useAuth();
+    const [open,setOpen]=useState(false)
+
+     const firstLetter =
+      user?.displayName?.charAt(0).toUpperCase() ||
+      user?.email?.charAt(0).toUpperCase();
 
     return(
         <div className="header">
@@ -19,10 +25,22 @@ const Header=()=>{
              <button onClick={()=>navigate("/watchlist")}>
                 My WatchList
              </button>
-             <button className="logoutBtn" onClick={logout}>
-                Logout
-             </button>
+
+             <div className="profile">
+              <div
+                className="profile__avatar"
+                onClick={() => setOpen(!open)}
+              >
+                {firstLetter}
+              </div>
+
+            {open && (
+            <div className="profile__dropdown">
+              <button onClick={logout}>Logout</button>
+            </div>
+          )}
           </div>
+         </div>
         </div>
     )
 }

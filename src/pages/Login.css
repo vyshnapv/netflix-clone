@@ -1,0 +1,91 @@
+*{
+    margin: 0;
+}
+
+.login {
+  height: 100vh;
+  background: linear-gradient(
+      rgba(0, 0, 0, 0.7),
+      rgba(0, 0, 0, 0.7)
+    ),
+    url("https://assets.nflxext.com/ffe/siteui/vlv3/9a9c1b50-5fbe-4a74-a5b5-48b2c7b1c7b7/0b1b8f6f-1e0b-4a3a-8e50-6f8d1c7f9f0f/IN-en-20240122-popsignuptwoweeks-perspective_alpha_website_large.jpg");
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login__card {
+  background: rgba(0, 0, 0, 0.75);
+  padding: 60px;
+  width: 100%;
+  max-width: 380px;
+  border-radius: 4px;
+  color: white;
+}
+
+.login__card h1 {
+  margin-bottom: 28px;
+  font-size: 32px;
+}
+
+.login__card form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login__card input {
+  height: 45px;
+  margin-bottom: 16px;
+  padding: 0 15px;
+  border-radius: 4px;
+  border: none;
+  outline: none;
+  background: #333;
+  color: white;
+  font-size: 14px;
+}
+
+.login__card input::placeholder {
+  color: #8c8c8c;
+}
+
+.login__card button {
+  height: 45px;
+  background-color: #e50914;
+  border: none;
+  border-radius: 4px;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+.login__card button:hover {
+  background-color: #f40612;
+}
+
+.login__error {
+  color: #e87c03;
+  font-size: 14px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+
+.login__signup {
+  margin-top: 20px;
+  font-size: 14px;
+  color: #737373;
+  text-align: center;
+}
+
+.login__signup span {
+  color: white;
+  cursor: pointer;
+}
+
+.login__signup span:hover {
+  text-decoration: underline;
+}

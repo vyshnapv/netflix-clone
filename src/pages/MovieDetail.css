@@ -2,20 +2,37 @@
   min-height: 100vh;
   background-color: #111;
   color: white;
+  
 }
 
 .movieDetail__banner {
   width: 100%;
-  height: 70vh;
+  height: 75vh;
   object-fit: cover;
-  opacity: 0.6;
+  object-position: center top;
+}
+
+.movieDetail::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 75vh;
+  width: 100%;
+  background: linear-gradient(
+    to top,
+    #111 10%,
+    rgba(17, 17, 17, 0.6) 50%,
+    rgba(17, 17, 17, 0.2) 100%
+  );
 }
 
 .movieDetail__content {
-  padding: 40px;
-  margin-top: -200px;
   position: relative;
   z-index: 1;
+  padding: 40px;
+  max-width: 800px;
+  margin-top: -220px;
 }
 
 .movieDetail__content h1 {
@@ -27,19 +44,46 @@
   max-width: 600px;
   line-height: 1.6;
   font-size: 1rem;
+  color: #ddd;
+}
+
+.movieDetail__buttons {
+  margin-top: 25px;
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
 }
 
 .watchlistBtn {
-  margin-top: 20px;
-  padding: 10px 20px;
-  background-color: #e50914;
+  padding: 10px 24px;
   border: none;
-  color: white;
   font-size: 1rem;
   cursor: pointer;
   border-radius: 4px;
+  font-weight: 500;
+  color: white;
+  background-color: #e50914;
+}
+
+.watchlistBtn.blue {
+  background-color: #0066ff;
 }
 
 .watchlistBtn:hover {
-  background-color: #f40612;
+  opacity: 0.9;
+}
+
+@media (max-width: 768px) {
+  .movieDetail__content {
+    margin-top: -160px;
+    padding: 20px;
+  }
+
+  .movieDetail__content h1 {
+    font-size: 2rem;
+  }
+
+  .movieDetail__content p {
+    font-size: 0.95rem;
+  }
 }

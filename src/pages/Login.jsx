@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useAuth } from "../context/AuthContext";
 import { useNavigate } from "react-router-dom";
+import "./Login.css"
 
 const Login=()=>{
     const [email,setEmail]=useState("");
@@ -34,34 +35,36 @@ const Login=()=>{
         }
     };
     return(
-        <div style={{padding:"40px"}}>
-           <h1>Netflix Login</h1>
-           <form>
-              <input 
-                type="email" 
-                placeholder="Email"
-                value={email}
-                onChange={(e)=>setEmail(e.target.value)}
-              />
+         <div className="login">
+      <div className="login__card">
+        <h1>Sign In</h1>
 
-              <br /><br />
+        <form>
+          <input
+            type="email"
+            placeholder="Email or phone number"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
 
-              <input 
-                type="password" 
-                placeholder="Password"
-                value={password}
-                onChange={(e)=>setPassword(e.target.value)}
-              />
+          <input
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
 
-              <br /><br />
+          {error && <p className="login__error">{error}</p>}
 
-              {error && <p style={{color:"red"}}>{error}</p>}
+          <button onClick={handleLogin}>Sign In</button>
+          <button onClick={handleSignup}>Sign Up</button>
+        </form>
 
-              <button onClick={handleLogin}>Login</button>
-              <br /><br />
-              <button onClick={handleSignup}>Sign up</button>
-           </form>
+        <div className="login__signup">
+          New to Netflix? <span onClick={handleSignup}>Sign up now</span>
         </div>
+      </div>
+    </div>
     )
 }
 

@@ -43,6 +43,22 @@
   text-align: center;
 }
 
+.watchlist__removeBtn {
+  margin-top: 6px;
+  width: 100%;
+  padding: 6px;
+  background-color: #e50914;
+  border: none;
+  color: white;
+  font-size: 0.85rem;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.watchlist__removeBtn:hover {
+  background-color: #f40612;
+}
+
 .watchlist__error {
   color: white;
   padding: 40px;
